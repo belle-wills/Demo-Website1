@@ -1,0 +1,17 @@
+# Ignore environment files
+.env
+
+# Ignore vendor folder (dependencies installed via Composer)
+vendor/
+
+# Ignore IDE config files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store  # macOS specific
+Thumbs.db  # Windows specific
+
+# Ignore logs and cache
+logs/
+cache/

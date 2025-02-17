@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        nav a:hover {
+            color: #ff6600;
+            transform: scale(1.1);
+        }
+        nav a:active {
+            color: #cc5500;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .artwork-loop {
+            margin-top: 20px;
+        }
+        .artwork-loop video {
+            width: 100%;    
+            max-width: 600px;
+            border-radius: 5px;
+        }
+        footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+        margin-top: auto;
+        position: fixed;
+        bottom: 0;
+        width: 100%;  
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+    </nav>
+    
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>Hello! intro/info here - about me.</p>
+        <p>Feel free to explore my portfolio and reach out if you'd like to collaborate or learn more about my work.</p>
+        
+        <div class="artwork-loop">
+            <h3>Featured Artwork - Muted Looped Piece Here / Demo Vid</h3>
+            <video autoplay loop muted>
+                <source src="artwork-loop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Ileyas ____. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
