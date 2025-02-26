@@ -3,60 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>About Me</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ececec;
+
         }
+
         header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
+        background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+        backdrop-filter: blur(20px); /* Adjust blur intensity */
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        z-index: 2;
+        position: relative;
         }
         nav {
             text-align: center;
             margin: 10px 0;
+            gap: 30px;
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #333;
             font-size: 18px;
+            color: white;
             transition: color 0.3s ease, transform 0.2s ease;
         }
         nav a:hover {
-            color: #ff6600;
+            color: rgb(255, 0, 30);
             transform: scale(1.1);
         }
         nav a:active {
-            color: #cc5500;
+            color: rgb(255, 0, 30);
+        
         }
+        h4 {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #ececec, #ececec);
+        background-clip: text;
+        -webkit-background-clip: text; /* For Safari and Chrome */
+        -webkit-text-fill-color: transparent;
+        }
+        
+        .emoji {
+        display: inline-block; /* Ensures it behaves like an image */
+        transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+        font-size: 24px; /* Adjust emoji size if needed */
+        }
+
+        .emoji:hover {
+        transform: scale(1.2) rotate(10deg); /* Scale up & rotate */
+        }
+
+        .container:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+        from {
+        opacity: 0;
+        transform: scale(0.8); /* Starts smaller and grows */
+        }
+        to {
+        opacity: 1;
+        transform: scale(1); /* Returns to normal size */
+        }
+        }
+
         .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: center;
+        animation: fadeIn 1s ease-out forwards;
+        width: 80%;
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        position: relative;
+        top: 100px;
         }
-        .artwork-loop {
-            margin-top: 20px;
+
+
+
+        .container p {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
-        .artwork-loop video {
-            width: 100%;    
-            max-width: 600px;
-            border-radius: 5px;
+        .github-link {
+        color: #ff416c; /* Stylish color */
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
         }
-        footer {
+
+        .github-link:hover {
+        color: #ff4b2b;
+        text-decoration: underline;
+        }
+
+        .video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -2; /* Ensures it stays behind all content */
+        }
+        .background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        /* Hide Play Button (Safari/Chrome) */
+         .background-video::-webkit-media-controls {
+        display: none !important;
+        }
+        
+
+
+         footer {
         text-align: center;
         padding: 1rem;
-        background-color: #333;
+        background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+        backdrop-filter: blur(20px); /* Adjust blur intensity */
         color: white;
         margin-top: auto;
         position: fixed;
@@ -65,6 +146,7 @@
         }
 
     </style>
+    
 </head>
 <body>
     <header>
@@ -76,22 +158,59 @@
         <a href="about.html">About Me</a>
     </nav>
     
-    <div class="container">
-        <h2>Welcome!</h2>
-        <p>Hello! intro/info here - about me.</p>
-        <p>Feel free to explore my portfolio and reach out if you'd like to collaborate or learn more about my work.</p>
-        
-        <div class="artwork-loop">
-            <h3>Featured Artwork - Muted Looped Piece Here / Demo Vid</h3>
-            <video autoplay loop muted>
-                <source src="artwork-loop.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="video-container">
+        <video class="background-video" autoplay loop muted playsinline>
+            <source src="public/videos/demovid8.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         </div>
+
+    <div class="container">
+        <h4>Welcome!</h4>
+       
+            <p> This is a demo portfolio website showcasing various design and functionality features.
+            
+            The Contact Me section includes built-in functionality that allows messages to be sent directly to an email using PHP mail(). This enables seamless communication between visitors and the website owner.
+            
+            Feel free to explore the demo and reach out via the contact form for more information! <span class="emoji">😊</span></p>
+            
+            
+            
+            
+            <p>Feel free to explore my work on <a href="https://github.com/belle-wills" target="_blank" class="github-link">GitHub</a>! <span class="emoji">🚀</span></p>
+        
     </div>
+   
+
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.querySelector(".background-video");
+        
+            function attemptPlay() {
+                video.play().then(() => {
+                    console.log("Autoplay successful");
+                    video.playbackRate = 1; // speed of vid 
+                }).catch(error => {
+                    console.error("Autoplay blocked:", error);
+                    video.muted = true; // Force mute
+                    video.play().then(() => {
+                        video.playbackRate = 1;
+                    }).catch(err => console.error("Retry failed:", err));
+                });
+            }
+        
+            // Attempt autoplay immediately
+            attemptPlay();
+        
+            // Ensure autoplay works after user interaction
+            document.addEventListener("click", attemptPlay);
+        });
+        </script>
+
     <footer>
-        <p>&copy; 2025 Ileyas ____. All Rights Reserved.</p>
+        <p>&copy; Belle Wills </p>
     </footer>
+    
 </body>
 </html>

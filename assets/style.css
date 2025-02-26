@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Header & Navbar */
+header, footer {
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+    backdrop-filter: blur(20px); /* Adjust blur intensity */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    z-index: 2;
+    position: relative;
+}
+
+nav {
+    text-align: center;
+    margin: 10px 0;
+    z-index: 2;
+    position: relative;
+}
+
+nav a {
+    text-align: center;
+    margin: 10px 0;
+    z-index: 2;
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: rgb(255, 0, 30) !important; /* Ensures red hover effect on all pages */
+    transform: scale(1.1);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(202, 202, 202),
+
+}
+
+.contact-form h3 {
+    text-align: center;
+    width: 100%;
+    font-size: 24px; /* Adjust size if needed */
+    color: rgb(202, 202, 202); 
+    font-weight: bold; /
+    margin-bottom: 15px; /* Adds spacing below */
+}
+
+
+video {
+    will-change: transform;
+    visibility: visible !important;
+}
+
+/* Background Video Container */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Ensures it stays behind other content */
+    background: black; /* Fallback if video doesn't load */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Video */
+.background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* video fills the screen */
+    pointer-events: none; /* Prevents interactions */
+}
+
+/* Hide Play Button (Safari/Chrome) */
+.background-video::-webkit-media-controls {
+    display: none !important;
+}
+
+
+/* Container with Blurred Glass Effect */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: black;
+}
+
+
+/* Gallery Grid - 2 Columns */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px; /* Adjust width for a balanced layout */
+    margin: 0 auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 350px; /* Adjust for a modern look */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+    width: 80%; /* Adjust width for better alignment */
+    max-width: 600px; /* Prevents it from stretching too wide */
+    margin: 30px auto; /* Centers the form */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(233, 233, 233, 0.1);
+}
+
+/* Input Fields & Textarea */
+.contact-form input, .contact-form textarea {
+    width: calc(100% - 20px); /* Prevents touching the sides */
+    max-width: 100%;
+    padding: 10px 15px; /* Ensures even spacing inside */
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    color: rgb(254, 254, 254); 
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+
+/* Button */
+.contact-form button {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block; /* Ensures it aligns with the form */
+    width: 100%; /* Makes button span the width for balance */
+}
+
+.contact-form button:hover {
+    background-color: rgb(103, 103, 103);
+}

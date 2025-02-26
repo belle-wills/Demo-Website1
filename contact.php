@@ -11,13 +11,10 @@ $dotenv->load();
 $mail = new PHPMailer(true);
 
 try {
-    $mail->SMTPDebug = 2; // Debugging mode
-    $mail->Debugoutput = 'html';
-
-    // SMTP Configuration
+    // Server settings
     $mail->isSMTP();
-    $mail->Host = $_ENV['SMTP_HOST'];
-    $mail->Port = $_ENV['SMTP_PORT'];
+    $mail->Host = 'smtp.mail.me.com';
+    $mail->Port = 587;
     $mail->SMTPAuth = true;
     $mail->Username = $_ENV['SMTP_USERNAME'];
     $mail->Password = $_ENV['SMTP_PASSWORD'];
@@ -29,7 +26,7 @@ try {
     $message = htmlspecialchars($_POST["message"]);
 
     // Recipients
-    $mail->setFrom($_ENV['SMTP_USERNAME'], 'Ileyas Portfolio Contact');
+    $mail->setFrom($_ENV['SMTP_USERNAME'], 'Demo Website 1');
     $mail->addReplyTo($email, $name);
     $mail->addAddress($_ENV['SMTP_USERNAME']);
 
@@ -41,8 +38,15 @@ try {
                    <p><strong>Message:</strong><br>$message</p>";
 
     $mail->send();
-    echo "Email sent successfully!";
+
+    // Redirect to Thank You Page
+    header("Location: emailsent.html");
+    exit();
 } catch (Exception $e) {
-    echo "Email failed: {$mail->ErrorInfo}";
+    echo "<div style='font-family: Arial, sans-serif; text-align: center; margin-top: 50px;'>
+            <h2 style='color: red;'>Oops! Something went wrong.</h2>
+            <p style='color: #555;'>We couldn't send your message. Please try again later.</p>
+            <a href='index.html' style='text-decoration: none; background: #007BFF; color: white; padding: 10px 20px; border-radius: 5px;'>Go Back</a>
+          </div>";
 }
 ?>
